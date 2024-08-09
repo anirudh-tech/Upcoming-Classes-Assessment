@@ -1,16 +1,41 @@
+// src/components/dashboard/TableComponent.tsx
+import React, { useState } from 'react';
 import { Button } from "../ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "../ui/table";
 import { GoDotFill } from "react-icons/go";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { Clock } from "lucide-react";
-import { TableComponentProps } from "@/interface/InterfaceItem";
+import { Class, TableComponentProps } from "@/interface/InterfaceItem";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
-
+import ConfirmModal from "./ConfirmModal"; 
 
 const TableComponent: React.FC<TableComponentProps> = ({ classes, showBookedOnly }) => {
+    const [modalOpen, setModalOpen] = useState<boolean>(false);
+    const [selectedClass, setSelectedClass] = useState<Class | null>(null);
+
     const sortedClasses = classes
-    .filter(cls => !showBookedOnly || cls.status === 'booked')
-    .sort((a, b) => new Date(a.schedule).getTime() - new Date(b.schedule).getTime());
+        .filter(cls => !showBookedOnly || cls.status === 'booked')
+        .sort((a, b) => new Date(a.schedule).getTime() - new Date(b.schedule).getTime());
+
+    const handleJoinClick = (cls: Class) => {
+        setSelectedClass(cls);
+        setModalOpen(true);
+    };
+
+    const handleCloseModal = () => {
+        setModalOpen(false);
+        setSelectedClass(null);
+    };
+
+    const handleConfirmJoin = () => {
+        if (selectedClass) {
+            // Handle join logic here
+            console.log(`Joined class: ${selectedClass.className}`);
+        }
+        setModalOpen(false);
+        setSelectedClass(null);
+    };
+
     return (
         <>
             <Table>
@@ -73,7 +98,7 @@ const TableComponent: React.FC<TableComponentProps> = ({ classes, showBookedOnly
                                             </span>
                                         )
                                     ) : isLive ? (
-                                        <Button className="bg-blue-500 w-[110px] h-[36px] hover:bg-blue-700  duration-300 hover:border text-white gap-2">
+                                        <Button className="bg-blue-500 w-[110px] h-[36px] hover:bg-blue-700  duration-300 hover:border text-white gap-2" onClick={() => handleJoinClick(cls)}>
                                             Join Now <FaExternalLinkAlt className="w-5" />
                                         </Button>
                                     ) : (
@@ -87,6 +112,7 @@ const TableComponent: React.FC<TableComponentProps> = ({ classes, showBookedOnly
                     })}
                 </TableBody>
             </Table>
+            <ConfirmModal open={modalOpen} onClose={handleCloseModal} onConfirm={handleConfirmJoin} />
         </>
     );
 }

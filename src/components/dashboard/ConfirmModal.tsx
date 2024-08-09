@@ -1,6 +1,6 @@
 // src/components/ConfirmModal.tsx
 import { Button } from "../ui/button"; // Adjust import based on your setup
-import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "../ui/dialog";
+import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle } from "../ui/dialog";
 
 interface ConfirmModalProps {
     open: boolean;
@@ -11,9 +11,6 @@ interface ConfirmModalProps {
 const ConfirmModal: React.FC<ConfirmModalProps> = ({ open, onClose, onConfirm }) => {
     return (
         <Dialog open={open} onOpenChange={onClose}>
-            <DialogTrigger>
-                <Button>Open Confirm Modal</Button>
-            </DialogTrigger>
             <DialogContent>
                 <DialogHeader>
                     <DialogTitle>Confirm Join</DialogTitle>

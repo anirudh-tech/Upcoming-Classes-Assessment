@@ -99,7 +99,7 @@ const Dashboard = () => {
 
         {/* upcoming classes */}
         <div className="md:grid hidden grid-cols-2 p-3 gap-3">
-          <div className="bg-white rounded-md p-3 min-h-[100px] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 max-h-[570px]">
+          <div className="bg-white rounded-md p-3 min-h-[100px] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 max-h-[565px]">
             <div className="flex items-center justify-between">
               <div className="flex flex-col">
                 <h1 className="font-semibold">Upcoming classes</h1>
@@ -113,7 +113,7 @@ const Dashboard = () => {
                 />
               </div>
             </div>
-            <div className="pt-4 md:block hidden">
+            <div className="pt-3 md:block hidden">
               {/* table start */}
               <TableComponent classes={currentClasses} showBookedOnly={showBookedOnly} />
               {/* table end */}
@@ -154,7 +154,7 @@ const Dashboard = () => {
         </div>
 
         {/* Pagination */}
-        <div className="flex justify-between w-1/2 mt-4">
+        <div className="md:flex justify-between w-1/2 hidden">
           <div className="flex justify-start items-start">
             <Pagination>
               <PaginationContent>

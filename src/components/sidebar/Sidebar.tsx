@@ -52,7 +52,7 @@ const Sidebar = () => {
             <div className="fixed md:hidden bottom-0 bg-white w-full p-2">
                 <div className="flex gap-6 w-full justify-center">
                     {iconsForMobile.map((item, index) => (
-                        <div key={index} className="flex flex-col items-center">
+                        <div key={index} className="flex flex-col items-center cursor-pointer">
                             {item.isProfile ? (
                                 <Avatar className="w-6 h-6">
                                     <AvatarImage className="object-cover" src={ProfilePic}/>
