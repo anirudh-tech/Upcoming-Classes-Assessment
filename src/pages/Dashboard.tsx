@@ -17,48 +17,48 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 const classes: Class[] = [
   {
     id: 1,
-    className: "Math 101",
-    instructor: "Mr. Smith",
+    className: "UI/UX Designing",
+    instructor: "Suriya R",
     schedule: new Date().toISOString(),
     status: "booked",
     image: instructor1
   },
   {
     id: 2,
-    className: "Science 201",
-    instructor: "Ms. Johnson",
+    className: "Graphic Designing",
+    instructor: "Priya Sweety",
     schedule: "2024-08-11T10:45:00", 
     status: "available",
     image: instructor2
   },
   {
     id: 3,
-    className: "History 301",
-    instructor: "Dr. Brown",
+    className: "Design Hierarchy",
+    instructor: "Leslie Alexander",
     schedule: "2024-08-12T13:00:00",
     status: "available",
     image: instructor3
   },
   {
     id: 4,
-    className: "Art 101",
-    instructor: "Ms. White",
+    className: "Basics of Frontend",
+    instructor: "Courtney Henry",
     schedule: "2024-08-13T14:15:00",
     status: "booked",
     image: instructor4
   },
   {
     id: 5,
-    className: "Music 101",
-    instructor: "Mr. Green",
+    className: "Graphic Designing",
+    instructor: "Jerome Bell",
     schedule: "2024-08-14T15:30:00",
     status: "available",
     image: instructor5
   },
   {
     id: 6,
-    className: "Physics 201",
-    instructor: "Dr. Black",
+    className: "Graphic Designing",
+    instructor: "Wade Warren",
     schedule: "2024-08-10T00:00:00",
     status: "booked",
     image: instructor6
