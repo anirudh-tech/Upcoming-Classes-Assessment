@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Sidebar from './components/sidebar/Sidebar'
 import Dashboard from './pages/Dashboard'
@@ -9,6 +9,7 @@ function App() {
     <>
       <main className='flex'>
         <Routes>
+          <Route path="/" element={<Navigate to="/admin/dashboard" />} />
           <Route path="/admin/" element={<Sidebar />}>
             <Route path="dashboard" element={<Dashboard />} />
           </Route>

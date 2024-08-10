@@ -1,0 +1,3 @@
+{
+  "rewrites": [{ "source": "/(.*)", "destination": "https://upcoming-classes-assessment.vercel.app" }]
+}
