@@ -3,7 +3,7 @@ import AssignmentComponent from "./AssignmentComponent";
 const sampleAssignments = [
     {
       name: "Math Homework",
-      deadline: "2024-08-10T00:00:00Z", // ISO 8601 date string
+      deadline: "2024-08-10T00:00:00Z", 
     },
     {
       name: "Science Project",

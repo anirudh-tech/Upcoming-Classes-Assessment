@@ -1,5 +1,4 @@
-// src/components/ConfirmModal.tsx
-import { Button } from "../ui/button"; // Adjust import based on your setup
+import { Button } from "../ui/button"; 
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle } from "../ui/dialog";
 
 interface ConfirmModalProps {

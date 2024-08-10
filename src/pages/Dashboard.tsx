@@ -71,11 +71,9 @@ const Dashboard = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [resultsPerPage, setResultsPerPage] = useState<number>(6);
 
-  // Calculate the number of pages
   const filteredClasses = classes.filter(cls => !showBookedOnly || cls.status === 'booked');
   const totalPages = Math.ceil(filteredClasses.length / resultsPerPage);
 
-  // Calculate the classes to display on the current page
   const startIndex = (currentPage - 1) * resultsPerPage;
   const currentClasses = filteredClasses.slice(startIndex, startIndex + resultsPerPage);
 
@@ -87,7 +85,7 @@ const Dashboard = () => {
 
   const handleResultsPerPageChange = (count: number) => {
     setResultsPerPage(count);
-    setCurrentPage(1); // Reset to the first page when changing results per page
+    setCurrentPage(1); 
   };
 
   return (

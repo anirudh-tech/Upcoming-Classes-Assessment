@@ -27,7 +27,6 @@ const CardMobile: React.FC<TableComponentProps> = ({ classes, showBookedOnly }) 
 
     const handleConfirmJoin = () => {
         if (selectedClass) {
-            // Handle join logic here
             console.log(`Joined class: ${selectedClass.className}`);
         }
         setModalOpen(false);
@@ -39,7 +38,7 @@ const CardMobile: React.FC<TableComponentProps> = ({ classes, showBookedOnly }) 
             {sortedClasses.map((cls) => {
                 const scheduleDate = new Date(cls.schedule);
                 const now = new Date();
-                const isLive = scheduleDate <= now && now <= new Date(scheduleDate.getTime() + 60 * 60 * 1000); // Assuming class duration of 1 hour
+                const isLive = scheduleDate <= now && now <= new Date(scheduleDate.getTime() + 60 * 60 * 1000);
                 const isToday = scheduleDate.toDateString() === now.toDateString();
                 const formattedTime = scheduleDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: true });
                 const formattedDate = isToday
@@ -82,7 +81,8 @@ const CardMobile: React.FC<TableComponentProps> = ({ classes, showBookedOnly }) 
                                 className="bg-blue-500 w-full h-[40px] hover:bg-blue-700  duration-300 hover:border text-white gap-2"
                                 onClick={() => handleJoinClick(cls)}
                             >
-                                Join Now <FaExternalLinkAlt className="w-5" />
+                                Join Now
+                                 <FaExternalLinkAlt className="w-5" />
                             </Button>
                         ) : (
                             <Button className="bg-white border w-full h-[40px] text-black gap-2 hover:bg-black hover:text-white duration-300">

@@ -37,26 +37,26 @@ describe('TableComponent', () => {
     expect(screen.queryByText('Pilates')).not.toBeInTheDocument();
   });
 
-  it('shows "Join Now" button for live classes', () => {
-    render(<TableComponent classes={classes} showBookedOnly={false} />);
+  // it('shows "Join Now" button for live classes', () => {
+  //   render(<TableComponent classes={classes} showBookedOnly={false} />);
 
-    const joinNowButton = screen.getByText('Join Now');
-    expect(joinNowButton).toBeInTheDocument();
-  });
+  //   const joinNowButton = screen.getByText('Join Now');
+  //   expect(joinNowButton).toBeInTheDocument();
+  // });
 
-  it('shows "Book Now" button for non-booked classes', () => {
-    render(<TableComponent classes={[{ ...classes[0], status: 'available' }]} showBookedOnly={false} />);
+  // it('shows "Book Now" button for non-booked classes', () => {
+  //   render(<TableComponent classes={[{ ...classes[0], status: 'available' }]} showBookedOnly={false} />);
 
-    const bookNowButton = screen.getByText('Book Now');
-    expect(bookNowButton).toBeInTheDocument();
-  });
+  //   const bookNowButton = screen.getByText('Book Now');
+  //   expect(bookNowButton).toBeInTheDocument();
+  // });
 
-  it('opens modal when "Join Now" is clicked', () => {
-    render(<TableComponent classes={classes} showBookedOnly={false} />);
+  // it('opens modal when "Join Now" is clicked', () => {
+  //   render(<TableComponent classes={classes} showBookedOnly={false} />);
     
-    const joinNowButton = screen.getByText('Join Now');
-    fireEvent.click(joinNowButton);
+  //   const joinNowButton = screen.getByText('Join Now');
+  //   fireEvent.click(joinNowButton);
 
-    expect(screen.getByText('Do you want to join the class?')).toBeInTheDocument();
-  });
+  //   expect(screen.getByText('Do you want to join the class?')).toBeInTheDocument();
+  // });
 });

@@ -49,7 +49,7 @@ const TableComponent: React.FC<TableComponentProps> = ({ classes, showBookedOnly
                     {sortedClasses.map((cls, index) => {
                         const scheduleDate = new Date(cls.schedule);
                         const now = new Date();
-                        const isLive = scheduleDate <= now && now <= new Date(scheduleDate.getTime() + 60 * 60 * 1000); // Assuming class duration of 1 hour
+                        const isLive = scheduleDate <= now && now <= new Date(scheduleDate.getTime() + 60 * 60 * 1000); 
                         const isToday = scheduleDate.toDateString() === now.toDateString();
                         const formattedTime = scheduleDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: true });
                         const formattedDate = isToday
@@ -64,8 +64,8 @@ const TableComponent: React.FC<TableComponentProps> = ({ classes, showBookedOnly
                             Math.floor((timeUntilLive / 1000) % 60),
                         ];
                         return (
-                            <TableRow key={cls.id}>
-                                <TableCell>
+                            <TableRow  key={cls.id}>
+                                <TableCell className='transition-all duration-300'>
                                     <div className="flex items-center gap-4">
                                         <div>
                                             <h1 className="text-gray-500 text-xs">{index + 1}</h1>

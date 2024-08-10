@@ -8,7 +8,7 @@ const classes: Class[] = [
     id: 1,
     className: 'Yoga',
     instructor: 'John Doe',
-    schedule: new Date(Date.now() + 3600000).toISOString(), // 1 hour in the future
+    schedule: new Date(Date.now() + 3600000).toISOString(), 
     status: 'booked',
     image: 'path-to-image',
   },
@@ -16,7 +16,7 @@ const classes: Class[] = [
     id: 2,
     className: 'Pilates',
     instructor: 'Jane Smith',
-    schedule: new Date(Date.now() - 3600000).toISOString(), // 1 hour in the past
+    schedule: new Date(Date.now() - 3600000).toISOString(),
     status: 'booked',
     image: 'path-to-image',
   },
@@ -31,7 +31,15 @@ describe('CardMobile Component', () => {
   });
 
   it('shows "Join Now" button for live classes', () => {
-    render(<CardMobile classes={classes} showBookedOnly={false} />);
+    const liveClass: Class = {
+        id: 1,
+        className: 'Yoga',
+        instructor: 'John Doe',
+        schedule: new Date().toISOString(),
+        status: 'booked',
+        image: 'path-to-image',
+      };
+    render(<CardMobile classes={[liveClass]} showBookedOnly={false} />);
 
     const joinNowButton = screen.getByText('Join Now');
     expect(joinNowButton).toBeInTheDocument();
@@ -45,10 +53,4 @@ describe('CardMobile Component', () => {
   });
 });
 
-function sum(a: number, b: number) {
-    return a + b;
-  }
 
-test('adds 1 + 2 to equal 3', () => {
-    expect(sum(1, 2)).toBe(3);
-  });
