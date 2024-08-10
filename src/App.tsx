@@ -10,7 +10,6 @@ function App() {
       <main className='flex'>
         <Routes>
           <Route path="/" element={<Navigate to="/admin/dashboard" />} />
-          
           <Route path="/admin/" element={<Sidebar />}>
             <Route path="dashboard" element={<Dashboard />} />
           </Route>
