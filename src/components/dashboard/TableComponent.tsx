@@ -1,4 +1,3 @@
-// src/components/dashboard/TableComponent.tsx
 import React, { useState } from 'react';
 import { Button } from "../ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "../ui/table";
