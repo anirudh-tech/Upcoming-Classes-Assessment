@@ -19,7 +19,7 @@ const classes: Class[] = [
     id: 1,
     className: "Math 101",
     instructor: "Mr. Smith",
-    schedule: "2024-08-10T09:00:00",
+    schedule: "2024-08-11T09:00:00", // Updated date
     status: "booked",
     image: instructor1
   },
@@ -27,7 +27,7 @@ const classes: Class[] = [
     id: 2,
     className: "Science 201",
     instructor: "Ms. Johnson",
-    schedule: "2024-08-10T10:45:00",
+    schedule: "2024-08-11T10:45:00", // Updated date
     status: "available",
     image: instructor2
   },
@@ -35,7 +35,7 @@ const classes: Class[] = [
     id: 3,
     className: "History 301",
     instructor: "Dr. Brown",
-    schedule: "2024-08-11T13:00:00",
+    schedule: "2024-08-12T13:00:00", // Updated date
     status: "available",
     image: instructor3
   },
@@ -43,7 +43,7 @@ const classes: Class[] = [
     id: 4,
     className: "Art 101",
     instructor: "Ms. White",
-    schedule: "2024-08-12T14:15:00",
+    schedule: "2024-08-13T14:15:00", // Updated date
     status: "booked",
     image: instructor4
   },
@@ -51,7 +51,7 @@ const classes: Class[] = [
     id: 5,
     className: "Music 101",
     instructor: "Mr. Green",
-    schedule: "2024-08-13T15:30:00",
+    schedule: "2024-08-14T15:30:00", // Updated date
     status: "available",
     image: instructor5
   },
@@ -59,11 +59,12 @@ const classes: Class[] = [
     id: 6,
     className: "Physics 201",
     instructor: "Dr. Black",
-    schedule: new Date().toISOString(),
+    schedule: "2024-08-10T00:00:00", // Updated date
     status: "booked",
     image: instructor6
   },
 ];
+
 
 const Dashboard = () => {
   const [showBookedOnly, setShowBookedOnly] = useState<boolean>(false);
